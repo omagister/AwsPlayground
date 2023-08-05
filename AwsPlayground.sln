@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33414.496
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AwsPlayground.Common", "AwsPlayground.Common\AwsPlayground.Common.csproj", "{F664B7E8-6107-4174-A714-25CA9D8AF141}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwsPlayground.WebApi", "AwsPlayground.WebApi\AwsPlayground.WebApi.csproj", "{988EDF16-CF54-4892-BC2D-3C185509B202}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F664B7E8-6107-4174-A714-25CA9D8AF141}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F664B7E8-6107-4174-A714-25CA9D8AF141}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F664B7E8-6107-4174-A714-25CA9D8AF141}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F664B7E8-6107-4174-A714-25CA9D8AF141}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A6BA663-C3B4-46C1-91B9-E384F34E0195}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A6BA663-C3B4-46C1-91B9-E384F34E0195}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A6BA663-C3B4-46C1-91B9-E384F34E0195}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A6BA663-C3B4-46C1-91B9-E384F34E0195}.Release|Any CPU.Build.0 = Release|Any CPU
+		{988EDF16-CF54-4892-BC2D-3C185509B202}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{988EDF16-CF54-4892-BC2D-3C185509B202}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{988EDF16-CF54-4892-BC2D-3C185509B202}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{988EDF16-CF54-4892-BC2D-3C185509B202}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8F29C3C2-0386-4CE0-9FAE-D1520345580B}
+	EndGlobalSection
+EndGlobal
