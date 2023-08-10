@@ -1,3 +1,4 @@
+using Amazon.SimpleNotificationService.Model;
 using AwsPlayground.WebApi.helpers;
 using AwsPlayground.WebApi.models;
 using Microsoft.AspNetCore.Mvc;
@@ -81,7 +82,7 @@ app.MapDelete("/aws/sqs/message", async ([FromHeader(Name = "queueName")] string
 })
 .WithName("DeleteAwsSqsMessage");
 
-app.MapGet("/aws/sns/message", async ([FromHeader(Name = "topic")] string topic, [FromHeader(Name = "message")] string message) =>
+app.MapPost("/aws/sns/message", async ([FromHeader(Name = "topic")] string topic, [FromHeader(Name = "message")] string message) =>
 {
 	var snsHelper = GetHelpers.GetSnsHelper(localstackSettings.Port, localstackSettings.Region);
 	var topicArn = $"arn:aws:sns:{localstackSettings.Region}:000000000000:{topic}";
@@ -89,6 +90,18 @@ app.MapGet("/aws/sns/message", async ([FromHeader(Name = "topic")] string topic,
 
 	return response;
 })
-.WithName("GetAwsSnsMessage");
+.WithName("PostAwsSnsMessage");
+
+app.MapPost("/aws/sns/message/filter", async ([FromHeader(Name = "topic")] string topic, [FromHeader(Name = "message")] string message, [FromHeader(Name = "tipo")] string tipo) =>
+{
+	var snsHelper = GetHelpers.GetSnsHelper(localstackSettings.Port, localstackSettings.Region);
+	var topicArn = $"arn:aws:sns:{localstackSettings.Region}:000000000000:{topic}";
+	var attributes = new Dictionary<string, string>() { { "tipo", tipo } };
+	var publishRequest = new PublishRequest() { Message = message };
+	var response = await snsHelper.SendMessageAsync(topicArn, publishRequest, attributes);
+
+	return response;
+})
+.WithName("PostAwsSnsMessageWithFilter");
 
 app.Run();
